@@ -33,15 +33,15 @@ def doors_lockers(carArray):
 
     gear = ["P","N","D","1","2","3","R"]
     
-#    print("Left dashboard switch (0 or 1): {}".format(ld))
-#    print("Right dashboard switch (0 or 1): {}".format(rd))
-#    print("Child lock switch (0 or 1): {}".format(cl))
-#    print("Master unlock switch (0 or 1): {}".format(ml))
-#    print("Left inside handle (0 or 1): {}".format(li))
-#    print("Left outside handle (0 or 1): {}".format(lo))
-#    print("Right inside handle (0 or 1): {}".format(ri))
-#    print("Right outside handle (0 or 1): {}".format(ro))
-#    print("Gear shift position (P, N, D, 1, 2 ,3, or R): {}".format(gs))
+    print("Left dashboard switch (0 or 1): {}".format(ld))
+    print("Right dashboard switch (0 or 1): {}".format(rd))
+    print("Child lock switch (0 or 1): {}".format(cl))
+    print("Master unlock switch (0 or 1): {}".format(ml))
+    print("Left inside handle (0 or 1): {}".format(li))
+    print("Left outside handle (0 or 1): {}".format(lo))
+    print("Right inside handle (0 or 1): {}".format(ri))
+    print("Right outside handle (0 or 1): {}".format(ro))
+    print("Gear shift position (P, N, D, 1, 2 ,3, or R): {}".format(gs))
 
     # Check if the gear shift is one of the possible gear shift
     if gs not in gear:

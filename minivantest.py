@@ -1,5 +1,6 @@
 #! usr/bin/env python3
 """
+    Module 1 Task 2
     This module will test the minivan.py file    
 """
 
@@ -10,7 +11,7 @@ from minivan import doors_lockers
 
 def testing():
     """
-        This function will test the minivan doors which they are open or not using getFile.
+        This function will test the minivan doors which they are open or not using getFile variable.
         It will open the file from the web.
         It will call doors function from minivan.py
     """
@@ -20,6 +21,7 @@ def testing():
     with urlopen(getFile) as testFile:
         # Store the output in a record list.
         record = []
+        # Loop over each line in the testFile
         for line in testFile:
             #Decode the line and replace spaces and split them with comma.
             lineRows = line.decode('utf-8').replace(" ", "").strip().split(",")
