@@ -8,7 +8,7 @@
 
 from __future__ import print_function
 
-def doors(carArray):
+def doors_lockers(carArray):
     """
         ld => left dashboard switch
         rd => right dashboard switch
@@ -19,16 +19,17 @@ def doors(carArray):
         ri => right inside handle
         ro => right outside handle
     """
-
-    ld = int(carArray[0])
-    rd = int(carArray[1])
-    cl = int(carArray[2])
-    ml = int(carArray[3])
-    li = int(carArray[4])
-    lo = int(carArray[5])
-    ri = int(carArray[6])
-    ro = int(carArray[7])
-    gs = carArray[8]
+    # We will not assing anything to the first index right now because we are going to use it to asign
+    # "R1" late that is the first culomn in csv file
+    ld = int(carArray[1])
+    rd = int(carArray[2])
+    cl = int(carArray[3])
+    ml = int(carArray[4])
+    li = int(carArray[5])
+    lo = int(carArray[6])
+    ri = int(carArray[7])
+    ro = int(carArray[8])
+    gs = carArray[9]
 
     gear = ["P","N","D","1","2","3","R"]
     
@@ -40,9 +41,9 @@ def doors(carArray):
     print("Left outside handle (0 or 1): {}".format(lo))
     print("Right inside handle (0 or 1): {}".format(ri))
     print("Right outside handle (0 or 1): {}".format(ro))
-    print("Gear shift position (P, N, D, 1, 2 ,3, or R): {}".format(gear))
+    print("Gear shift position (P, N, D, 1, 2 ,3, or R): {}".format(gs))
 
-    if gs not in ("P","N","D","1","2","3","R"):
+    if gs not in gear:
         print("Inavalid Record: Both doors stay closed")
         return
     #gear shift must be in park and master unlock switch must be activated
@@ -68,26 +69,31 @@ def doors(carArray):
             return
 
 def main():
-    data = []
+    # Create a switch list that will store the user input
+    switch = []
+    # Fill the first index in the switch list with "R1" which is switch[0]
+    switch.append("R1")
+    # Get the user input and add it to the switch list.
     user_input = input("Left dashboard switch (0 or 1): ")
-    data.append(user_input)
+    switch.append(user_input)
     user_input = input("Right dashboard switch (0 or 1): ")
-    data.append(user_input)
+    switch.append(user_input)
     user_input = input("Child lock switch (0 or 1): ")
-    data.append(user_input)
+    switch.append(user_input)
     user_input = input("Master unlock switch (0 or 1): ")
-    data.append(user_input)
+    switch.append(user_input)
     user_input = input("Left inside handle (0 or 1): ")
-    data.append(user_input)
+    switch.append(user_input)
     user_input = input("Left outside handle (0 or 1): ")
-    data.append(user_input)
+    switch.append(user_input)
     user_input = input("Right inside handle (0 or 1): ")
-    data.append(user_input)
+    switch.append(user_input)
     user_input = input("Right outside handle (0 or 1): ")
-    data.append(user_input)
+    switch.append(user_input)
     user_input = input("Gear shift position (P, N, D, 1, 2, 3, or R): ")
-    data.append(user_input)
-    doors(data)
+    switch.append(user_input)
+    # Call doors_lockers function
+    doors_lockers(switch)
 
 if __name__ == "__main__":
     main()
