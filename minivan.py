@@ -33,16 +33,17 @@ def doors_lockers(carArray):
 
     gear = ["P","N","D","1","2","3","R"]
     
-    print("Left dashboard switch (0 or 1): {}".format(ld))
-    print("Right dashboard switch (0 or 1): {}".format(rd))
-    print("Child lock switch (0 or 1): {}".format(cl))
-    print("Master unlock switch (0 or 1): {}".format(ml))
-    print("Left inside handle (0 or 1): {}".format(li))
-    print("Left outside handle (0 or 1): {}".format(lo))
-    print("Right inside handle (0 or 1): {}".format(ri))
-    print("Right outside handle (0 or 1): {}".format(ro))
-    print("Gear shift position (P, N, D, 1, 2 ,3, or R): {}".format(gs))
+#    print("Left dashboard switch (0 or 1): {}".format(ld))
+#    print("Right dashboard switch (0 or 1): {}".format(rd))
+#    print("Child lock switch (0 or 1): {}".format(cl))
+#    print("Master unlock switch (0 or 1): {}".format(ml))
+#    print("Left inside handle (0 or 1): {}".format(li))
+#    print("Left outside handle (0 or 1): {}".format(lo))
+#    print("Right inside handle (0 or 1): {}".format(ri))
+#    print("Right outside handle (0 or 1): {}".format(ro))
+#    print("Gear shift position (P, N, D, 1, 2 ,3, or R): {}".format(gs))
 
+    # Check if the gear shift is one of the possible gear shift
     if gs not in gear:
         print("Inavalid Record: Both doors stay closed")
         return
@@ -51,19 +52,29 @@ def doors_lockers(carArray):
         print("Both doors stays closed")
         return
     else:
+        # Check if the Chile Lock is activated
         if cl == 1:
+            # Check if Left Dashboard Switch and Right Dashboard Switch are activated.
             if ld == 1 and rd == 1:
+                # Check if one of the Left Door Switches and Right Door Switches are activated.
                 if (li == 1 or lo == 1) and (ri == 1 or ro == 1):
                     print("Both doors open")
                     return
+            # Check if just Left Dashboard Swich is activated.
             elif ld == 1:
+                # Check if Left Inside Handle or Left Outdoor Handle is greater than 0.
+                # if one of them is greater than 0, that means it is activated.
                 if li+lo > 0:
                     print("Left door is open")
                     return
+            # Check if just Right Dashboard Swich is activated.
             elif rd == 1:
+                # Check if Right Inside Handle or Right Outdoor Handle is greater than 0.
+                # if one of them is greater than 0, that means it is activated.
                 if ri+ro > 0:
                     print("Right door is open")
                     return
+        # if Child Lock is off.
         else:
             print("Both doors stays closed end")
             return
