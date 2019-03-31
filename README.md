@@ -1,4 +1,5 @@
 # CS3030 Python Assignent 3 (hw9)
+Did this add?
 # Group Assignment:
 	Group2 member's
 		Bader Binsunbil
